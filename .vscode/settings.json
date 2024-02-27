@@ -1,0 +1,10 @@
+{
+    "scm.providerCountBadge": "hidden",
+    "javascript.preferGoToSourceDefinition": false,
+    "typescript.preferGoToSourceDefinition": false,
+    "debug.disassemblyView.showSourceCode": true,
+    "git.enableCommitSigning": false,
+    "git.autofetch": false,
+    "git.pullBeforeCheckout": false,
+    "git.confirmEmptyCommits": true
+}
