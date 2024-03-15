@@ -3,16 +3,23 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:krishi_mitra/firebase_option_auth.dart';
+import 'package:krishi_mitra/firebase_storage/firebase_option_auth.dart';
+import 'package:krishi_mitra/screens/admin/admin_bottom_bar.dart';
+import 'package:krishi_mitra/screens/admin/admin_login_page.dart';
 import 'package:krishi_mitra/screens/bottom_nav_bar.dart';
 import 'package:krishi_mitra/screens/for_doctors/doctor_home_screen.dart';
+import 'package:krishi_mitra/screens/for_doctors/doctor_login.dart';
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/add_crop.dart';
 
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/add_crop_detail.dart';
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/choose_crop.dart';
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/crop_doctor.dart';
 import 'package:krishi_mitra/screens/home_screen/home_page.dart';
+import 'package:krishi_mitra/screens/language_page.dart';
+import 'package:krishi_mitra/screens/login_page.dart';
+import 'package:krishi_mitra/screens/otp_page.dart';
 import 'package:krishi_mitra/screens/splash_screen.dart';
+import 'package:krishi_mitra/screens/user_detail.dart';
 
 import 'package:krishi_mitra/service/auth.dart';
 import 'package:krishi_mitra/utils/app_constants.dart';
@@ -21,11 +28,10 @@ import 'package:provider/provider.dart';
 import 'controllers/language_controller.dart';
 import 'utils/dependency_inj.dart' as dep;
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   Map<String, Map<String, String>> languages = await dep.init();
-
   runApp(MyApp(languages: languages));
 }
 
@@ -55,7 +61,7 @@ class MyApp extends StatelessWidget {
             //
             //
             //
-            home: const CommonBottomNavigation(),
+            home: const AdminBottomBar(),
             //
             //
             //
@@ -67,13 +73,6 @@ class MyApp extends StatelessWidget {
                 background: Colors.green.shade100,
               ),
             ),
-            // getPages: [
-            //   GetPage(name: '/', page: () => Screen()),
-            //   GetPage(
-            //     name: '/CartPage',
-            //     page: () => CartScreen(),
-            //   ),
-            // ],
           ),
         );
       },

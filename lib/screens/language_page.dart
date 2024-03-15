@@ -20,6 +20,7 @@ class _LanguagePageState extends State<LanguagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -50,9 +51,9 @@ class _LanguagePageState extends State<LanguagePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                  style: const ButtonStyle(
+                  style: ButtonStyle(
                     backgroundColor: MaterialStatePropertyAll(
-                      Color.fromARGB(255, 165, 221, 166),
+                      Colors.green[100],
                     ),
                   ),
                   onPressed: () {
@@ -62,13 +63,13 @@ class _LanguagePageState extends State<LanguagePage> {
                     'lenguage button'.tr,
                     style: TextStyle(
                         fontSize: displayHeight(context) * 0.014,
-                        color: Colors.green.shade900),
+                        color: Colors.green[900]),
                   ),
                 ),
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        const MaterialStatePropertyAll(Colors.green),
+                        MaterialStatePropertyAll(Colors.green[200]),
                     shape: MaterialStatePropertyAll(
                       OutlinedBorder.lerp(
                           const CircleBorder(), const CircleBorder(), 360),
@@ -89,7 +90,9 @@ class _LanguagePageState extends State<LanguagePage> {
                   child: SizedBox(
                     // height: 100,
                     width: 60,
-                    child: Lottie.asset("assets/lottie/arrow_icon.json"),
+                    child: Lottie.asset(
+                      "assets/lottie/arrow_icon.json",
+                    ),
                   ),
                 )
               ],

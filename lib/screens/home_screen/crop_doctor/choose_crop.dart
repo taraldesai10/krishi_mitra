@@ -35,8 +35,10 @@ class _ChooseCropState extends State<ChooseCrop> {
             ),
             Expanded(
               child: GridView.count(
+                mainAxisSpacing: 15,
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,
+                childAspectRatio: 0.8,
                 children: [
                   ...List.generate(
                     chooseCrop.length,
@@ -56,10 +58,12 @@ class _ChooseCropState extends State<ChooseCrop> {
                       child: Container(
                         alignment: Alignment.bottomLeft,
                         decoration: BoxDecoration(
-                          color: Colors.green[400],
+                          color: Colors.green[300],
                           image: DecorationImage(
-                            image: AssetImage(chooseCrop[index]["image"]),
-                          ),
+                              image: AssetImage(
+                                chooseCrop[index]["image"],
+                              ),
+                              fit: BoxFit.contain),
                         ),
                         child: Container(
                           alignment: Alignment.bottomCenter,

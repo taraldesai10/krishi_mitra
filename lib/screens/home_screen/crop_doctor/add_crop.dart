@@ -73,10 +73,8 @@ class _AddCropState extends State<AddCrop> {
                       if (AddCrop.imageFile == null) {
                         log("empty image");
                       } else {
-                        final ref = FirebaseStorage.instance
-                            .ref()
-                            .child("cropimages")
-                            .child(".jpg");
+                        final ref =
+                            FirebaseStorage.instance.ref().child("cropimages");
                         await ref.putFile(AddCrop.imageFile!);
                         AddCrop.url = await ref.getDownloadURL();
                       }

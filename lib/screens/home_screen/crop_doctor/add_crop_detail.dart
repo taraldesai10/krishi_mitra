@@ -48,16 +48,19 @@ class _AddCropDetailState extends State<AddCropDetail> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 250,
-                  decoration: BoxDecoration(
-                    color: Colors.green[200],
-                    borderRadius: BorderRadius.circular(40),
-                    image: DecorationImage(
-                      image: AssetImage(
-                        widget.image,
+                Center(
+                  child: Container(
+                    height: 300,
+                    decoration: BoxDecoration(
+                      color: Colors.green[200],
+                      // borderRadius: BorderRadius.circular(40),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage(
+                          widget.image,
+                        ),
+                        fit: BoxFit.contain,
                       ),
-                      fit: BoxFit.cover,
                     ),
                   ),
                 ),

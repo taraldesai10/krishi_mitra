@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:krishi_mitra/screens/agronomy_page.dart';
 import 'package:krishi_mitra/screens/home_screen/home_page.dart';
 import 'package:krishi_mitra/screens/mandi_page.dart';
-import 'package:krishi_mitra/screens/more_page.dart';
+import 'package:krishi_mitra/screens/more/more_page.dart';
 
 class CommonBottomNavigation extends StatefulWidget {
   const CommonBottomNavigation({super.key});
@@ -56,8 +56,8 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
             color: Colors.white,
           )
         ],
-        color: Colors.green.shade900,
-        buttonBackgroundColor: Colors.brown,
+        color: Colors.green.shade700,
+        buttonBackgroundColor: Colors.green[900],
         backgroundColor: Colors.transparent,
         animationCurve: Curves.ease,
         animationDuration: const Duration(milliseconds: 600),

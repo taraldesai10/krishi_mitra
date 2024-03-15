@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.5 <4.0.0'
+  sdk: '>=3.2.3 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -42,9 +42,6 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   get: ^4.6.6
   shared_preferences: ^2.2.2
-  http: ^1.2.0
-  geocoding: ^2.1.1
-  geolocator: ^11.0.0
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
   file_picker: ^6.1.1
@@ -61,6 +58,8 @@ dependencies:
   expandable: ^5.0.1
   auto_size_text: ^3.0.0
   text_scroll: ^0.2.0
+  weather: ^3.1.1
+  flutter_tts: ^3.8.5
 
 dev_dependencies:
   flutter_test:
@@ -71,7 +70,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.1
+  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -89,9 +88,9 @@ flutter:
     - assets/logo/
     - assets/lottie/
     - assets/locales/
-    - assets/assets/
     - assets/icons/
     - assets/crops/
+    - assets/government_schemes_image/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,14 +1,19 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:krishi_mitra/common/appbar.dart';
 import 'package:krishi_mitra/common/theam.dart';
-import 'package:krishi_mitra/common/weather.dart';
+import 'package:krishi_mitra/common/weather_api.dart';
+
+import 'package:krishi_mitra/models/user_model.dart';
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/crop_doctor.dart';
+import 'package:krishi_mitra/screens/home_screen/government%20_schemes,dart/government_schemes.dart';
 import 'package:krishi_mitra/screens/news/news.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -20,6 +25,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  var uid;
+  void inputData() {
+    final User? user = auth.currentUser;
+    uid = user?.uid;
+    // here you write the codes to input the data into firestore
+  }
+
   bool shimmer = false;
   Future<void> refresh() {
     setState(
@@ -65,9 +78,10 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         commonappbar(),
-        const Weather(),
+        // const Weather(),
+
         Container(
-          height: 260,
+          height: 270,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           decoration: BoxDecoration(
               color: Colors.green[200],
@@ -129,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const News(),
+                          builder: (context) => const GovernmentSchemes(),
                         ),
                       );
                       return (snack) {};

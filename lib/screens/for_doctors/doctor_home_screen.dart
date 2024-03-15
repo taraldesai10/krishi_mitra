@@ -34,21 +34,29 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
                       ),
                       child: Row(
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(right: 5),
-                            height: 80,
-                            width: 80,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  streamSnapshot.data?.docs[index]['picture'],
+                          streamSnapshot.data?.docs[index]['picture'] == null
+                              ? CircularProgressIndicator()
+                              : Container(
+                                  margin: const EdgeInsets.only(right: 5),
+                                  height: 80,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: NetworkImage(
+                                        streamSnapshot.data?.docs[index]
+                                            ['picture'],
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                          SizedBox(
+                            width: 10,
                           ),
                           Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 streamSnapshot.data?.docs[index]['name'],

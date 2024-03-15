@@ -5,8 +5,10 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:krishi_mitra/screens/bottom_nav_bar.dart';
 import 'package:krishi_mitra/screens/home_screen/home_page.dart';
 import 'package:krishi_mitra/screens/login_page.dart';
+import 'package:krishi_mitra/screens/user_detail.dart';
 
 import 'package:lottie/lottie.dart';
 import 'package:pinput/pinput.dart';
@@ -47,6 +49,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
     var code = "";
     return Scaffold(
+      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -125,11 +128,19 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
                         // Sign the user in (or link) with the credential
                         await auth.signInWithCredential(credential);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const HomePage(),
-                            ));
+                        if (UserDetailPage.forProfile == true) {
+                          Get.offUntil(
+                              MaterialPageRoute(
+                                builder: (context) => UserDetailPage(),
+                              ),
+                              (route) => false);
+                        } else {
+                          Get.offUntil(
+                              MaterialPageRoute(
+                                builder: (context) => CommonBottomNavigation(),
+                              ),
+                              (route) => false);
+                        }
                       } catch (e) {
                         log("wrong otp");
                       }
