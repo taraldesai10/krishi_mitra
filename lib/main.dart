@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
             //
             //
             //
-            home: const AdminBottomBar(),
+            home: const CommonBottomNavigation(),
             //
             //
             //

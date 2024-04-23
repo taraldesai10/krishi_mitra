@@ -10,10 +10,13 @@ class MandiPage extends StatefulWidget {
 class _MandiPageState extends State<MandiPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Mandi"),
+    return  Scaffold(
+      appBar: AppBar(
+
       ),
+
+      body:
+      ,
     );
   }
 }

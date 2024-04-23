@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:krishi_mitra/common/appbar.dart';
 import 'package:krishi_mitra/common/theam.dart';
 import 'package:krishi_mitra/common/weather_api.dart';
+import 'package:krishi_mitra/models/mapfor_government_schemes.dart';
 
 import 'package:krishi_mitra/models/user_model.dart';
 import 'package:krishi_mitra/screens/home_screen/crop_doctor/crop_doctor.dart';
@@ -38,12 +39,17 @@ class _HomePageState extends State<HomePage> {
     setState(
       () {
         shimmer = true;
+
+
+
+
       },
     );
     return Future.delayed(const Duration(seconds: 3)).then(
       (value) => setState(
         () {
           shimmer = false;
+
         },
       ),
     );
@@ -51,8 +57,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+
     super.initState();
+
     refresh();
+
+
   }
 
   @override
@@ -78,7 +88,7 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         commonappbar(),
-        // const Weather(),
+        const Weather(),
 
         Container(
           height: 270,
@@ -109,6 +119,7 @@ class _HomePageState extends State<HomePage> {
                     image: "assets/icons/news-paper-svgrepo-com.svg",
                     text: "news",
                     tap: () {
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -140,13 +151,20 @@ class _HomePageState extends State<HomePage> {
                     image: "assets/icons/gov.svg",
                     text: "government",
                     tap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const GovernmentSchemes(),
-                        ),
-                      );
-                      return (snack) {};
+
+                      setState(() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const GovernmentSchemes(),
+                          ),
+
+                        );
+                      });
+
+                      return (snack) {
+
+                      };
                     },
                   )
                 ],

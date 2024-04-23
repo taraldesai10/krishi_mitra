@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:krishi_mitra/screens/agronomy_page.dart';
 import 'package:krishi_mitra/screens/home_screen/home_page.dart';
-import 'package:krishi_mitra/screens/mandi_page.dart';
+import 'package:krishi_mitra/screens/mandi/mandi_page.dart';
 import 'package:krishi_mitra/screens/more/more_page.dart';
 
 class CommonBottomNavigation extends StatefulWidget {
@@ -19,7 +19,7 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
   final List pages = [
     const HomePage(),
     const MandiPage(),
-    const AgronomiPage(),
+
     const MorePage()
   ];
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
@@ -41,15 +41,11 @@ class _CommonBottomNavigationState extends State<CommonBottomNavigation> {
             color: Colors.white,
           ),
           Icon(
-            CupertinoIcons.cart,
+            CupertinoIcons.tree,
             size: 30,
             color: Colors.white,
           ),
-          Icon(
-            Icons.perm_identity,
-            size: 30,
-            color: Colors.white,
-          ),
+
           Icon(
             Icons.menu,
             size: 30,
